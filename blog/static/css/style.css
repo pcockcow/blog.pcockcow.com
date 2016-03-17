@@ -1,0 +1,70 @@
+@charset 'utf-8';
+
+html,body{position:relative;width:100%;height:100%;}
+body,p,div,ul,li,h1,h2,h3,a,textarea{margin:0;padding:0;font-size:14px;color:#666;line-height:18px;font-family:'Malgun Gothic','맑은 고딕', 'apple Gothic', tahoma, sans-serif;}
+ul,li,ol{list-style:none;}
+a{text-decoration:none;}
+h1{font-size:24px;font-weight:bold;color:#333;}
+
+.wrap{width:100%;height:100%;}
+.header{position:relative;z-index:10;padding:20px 0;width:100%;border-bottom:1px solid #000;background-color:#fff;}
+.header h1{margin-left:30px;}
+.container{position:relative;min-height:100%;margin-top:-59px;padding:0 290px 0 30px;}
+.container .cont{padding-top:80px;}
+.footer{padding:0 60px;margin-top:30px;}
+.footer .cont{padding:10px 0 0 0;border-top:1px solid #ededed;}
+.footer p{margin-top:5px;text-align:center;}
+
+.header .userInfo{position:absolute;top:21px;right:20px;}
+
+
+.lnb{position:absolute;top:0;right:0;padding:0 15px;width:229px;min-height:100%;border-left:1px solid #000;}
+.lnbCont{padding-top:59px;}
+.menuSet{margin-top:30px;}
+.menuSet .tit{margin-bottom:5px;font-size:14px;font-weight:bold;color:#000;}
+.menuSet .menu{margin-left:20px;}
+.menuSet .menu li{margin-bottom:3px;}
+.menuSet .tags{padding-left:20px;}
+.menuSet .tags .tag{display:inline-block;padding:0 3px; margin:0 3px 3px 0;border:1px solid #000;border-radius:5px;}
+
+.postList{padding:20px;}
+.postList li{padding:30px;margin-bottom:30px;background-color:#fafafa;}
+.postList li .postNo, .postList li .postNo a{margin-bottom:10px;font-size:24px;line-height:28px;font-weight:bold;}
+.postList li .postTit, .postList li .postTit a{margin-bottom:10px;padding:0 20px;font-size:24px;line-height:28px;font-weight:bold;}
+.postList li .postInfo{text-align:right;}
+
+.postHeader{padding:40px;text-align:center;border-bottom: 1px solid #efefef;}
+.postHeader .postTit{margin:0 auto;max-width:600px;padding-bottom:30px;font-size:30px;font-weight:bold;line-height:35px;}
+.postHeader .postInfo{color:#999;}
+
+.postBody{padding:50px;}
+.postBody, .postBody p, .postBody span{font-size:18px;line-height:23px;}
+
+.postFooter{padding:20px 50px;}
+.postFooter .profileImg img{width:70px;height:70px;background-color:#fff;border-radius:10px;border:1px solid #aaa;}
+
+.comments{padding:30px; background-color:#ededed;}
+.comments .authArea{text-align:right;margin-bottom:5px;}
+.comments .write{padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid #bbb;}
+.comments .write:after{content:".";display:block;clear:both;font-size:0;line-height:0;padding:0;margin:0;}
+.comments .write .profile{width:13%;float:left;}
+.comments .write .profile .profileImg{text-align:center;}
+
+.comments .write .inputArea{width:87%;float:right;}
+.comments .write .inputArea textarea{padding:10px;width:97%;border:1px solid #aaa;height:80px;}
+.comments .btnArea{margin-top:5px; margin-right:10px;text-align:right;}
+
+.comment {background-color:#fff;padding:0 20px;}
+.comment ul li{padding:20px 0;border-bottom:1px solid #ededed;}
+.comment ul li:after{content:".";display:block;clear:both;font-size:0;line-height:0;padding:0;margin:0;}
+.comment ul li .commentHeader{width:13%;float:left;}
+.comment ul li .commentBody{}
+.comment .commenter{font-weight:bold;}
+.comment .commentDate{font-style:italic;color:#aaa;}
+
+.cmnTbl{width:100%;}
+.cmnTbl th{padding:5px 10px;vertical-align:top;font-weight:bold;text-align:right;}
+.cmnTbl td{padding:5px 10px;}
+.cmnTbl td input{box-sizing:border-box;width:100%;padding:5px 10px;font-size:16px;}
+
+.btnArea{text-align:right;margin-top:20px;}

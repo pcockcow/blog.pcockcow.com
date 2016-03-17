@@ -1,0 +1,18 @@
+{% extends "include/layout.html" %}
+{% block content %}
+<ul class="postList">
+    {% for post in posts %}
+         <li>
+            <p class="postNo">
+                [#{{ post.id }}][{{ post.category }}]
+            </p>
+            <p class="postTit">
+                <a href="/{{ post.id }}">{{ post.title }}</a>
+            </p>
+            <p class="postInfo">
+                {{post.created_date}} | {{ post.author }}
+            </p>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

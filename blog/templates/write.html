@@ -1,0 +1,72 @@
+{% extends "include/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+<form action="/write/" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <table class="cmnTbl">
+        <colgroup>
+            <col style="width:10%"/>
+            <col style="width:80%"/>
+        </colgroup>
+        <tr>
+            <th>
+                <label for="{{ form.title.id_for_label }}">제목</label>
+            </th>
+            <td>
+                {{ form.title }} {{ form.title.errors }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="{{ form.category.id_for_label }}">카테고리</label>
+            </th>
+            <td>
+                {{ form.category }} {{ form.category.errors }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="{{ form.content.id_for_label }}">내용</label>
+            </th>
+            <td>
+                {{ form.content }} {{ form.content.errors }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="{{ form.tags.id_for_label }}">태그</label>
+            </th>
+            <td>
+                {{ form.tags }} {{ form.tags.errors }}
+            </td>
+        </tr>
+    </table>
+    <div class="btnArea">
+        <input type="submit" value="Submit" id="write"/>
+    </div>
+</form>
+
+<script type="text/javascript">
+var oEditors = [];
+nhn.husky.EZCreator.createInIFrame({
+    oAppRef: oEditors,
+    elPlaceHolder: "id_content",
+    sSkinURI: "{% static "js/smartEditor/SmartEditor2Skin.html" %}",
+    fCreator: "createSEditor2",
+    htParams : {
+                    fOnBeforeUnload : function(){
+                     //alert(&quot;onbeforeunload call&quot;);
+                    }
+                }
+    });
+
+(function() {
+ document.getElementById("write").onclick = function(){
+    oEditors.getById["id_content"].exec("UPDATE_CONTENTS_FIELD", []);
+ }
+})();
+
+</script>
+{% endblock %}

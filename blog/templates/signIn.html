@@ -1,0 +1,34 @@
+{% extends "include/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+<form action="/signIn/" method="post">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <input type="hidden" value="{{nextURL}}" name="next">
+    <table class="cmnTbl">
+        <colgroup>
+            <col style="width:10%"/>
+            <col style="width:80%"/>
+        </colgroup>
+        <tr>
+            <th>
+                <label for="{{ form.userid.id_for_label }}">ID</label>
+            </th>
+            <td>
+                {{ form.userid }} {{ form.userid.errors }}
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <label for="{{ form.password.id_for_label }}">Password</label>
+            </th>
+            <td>
+                {{ form.password }} {{ form.password.errors }}
+            </td>
+        </tr>
+    </table>
+    <div class="btnArea">
+        <input type="submit" value="로그인하기" id="write"/>
+    </div>
+</form>
+{% endblock %}

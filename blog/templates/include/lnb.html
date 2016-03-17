@@ -1,0 +1,36 @@
+<div class="lnb">
+    <div class="lnbCont">
+        <div class="menuSet">
+            <p class="tit">CATEGORY</p>
+            <ul class="menu">
+                {% for category in categorys%}
+                <li><a href="/category/{{category.name}}">{{category.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="menuSet">
+            <p class="tit">TAG</p>
+            <div class="tags">
+                <!--<p class="tag">tes</p>
+                <p class="tag">test</p>
+                <p class="tag">파이썬</p>
+                <p class="tag">파이썬은 망해ㅆㅇ</p><p class="tag">Node.js</p>
+                <p class="tag">데이터시각화</p>-->
+            </div>
+        </div>
+        <div class="menuSet">
+            <p class="tit">RECENT</p>
+            <ul class="menu">
+                {% for recent in recents %}
+                <li><a href="/{{recent.id}}">- {{recent.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="menuSet">
+            <p class="tit">LINK</p>
+            <ul class="menu">
+                <li>w3school</li>
+            </ul>
+        </div>
+    </div>
+</div>

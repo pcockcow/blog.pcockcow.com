@@ -1,0 +1,10 @@
+{% extends "include/layout.html" %}
+{% block content %}
+    <div class="postHeader">
+        <div class="postTit">{{ post.title }}</div>
+        <div class="postInfo">{{ post.created_date }} | {{post.author}} </div>
+    </div>
+    <div class="postBody">
+        {{post.content | safe}}
+    </div>
+{% endblock %}

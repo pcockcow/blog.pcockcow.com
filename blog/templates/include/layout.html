@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+	<meta charset="UTF-8">
+	<title>PCOCKCOW.COM</title>
+	{% include "include/header.html" %}
+</head>
+<body>
+	<div class="wrap">
+	    {% include "include/gnb.html" %}
+		<div class="container">
+            {% include "include/lnb.html" %}
+            <div class="cont">
+                {% block content %}{% endblock %}
+                {% include "include/footer.html" %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>
