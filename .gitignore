@@ -1,0 +1,4 @@
+blog/blog/settings.py
+blog/manage.py
+*.sh
+*.sh.comment
