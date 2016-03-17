@@ -2,4 +2,6 @@ blog/blog/settings.py
 blog/manage.py
 *.sh
 *.sh.command
-*/migrations
+migrations
+*.pyc
+.idea
