@@ -7,14 +7,15 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
 def index(req):
     posts = Post.objects.all().order_by("-id")
     return render(req, 'index.html', { "posts": posts })
 
+
 def detail(req, post_id):
     post = Post.objects.get(pk=post_id)
     return render(req, 'detail.html', { "post": post })
+
 
 @login_required(login_url='/signIn/')
 def post(req):
@@ -36,6 +37,7 @@ def post(req):
         form = PostForm()
 
     return render(req, 'write.html', {'form': form})
+
 
 def signIn(req):
     if req.method == 'POST':
@@ -71,11 +73,13 @@ def signOut(req):
     logout(req)
     return HttpResponseRedirect('/')
 
+
 def leftMenu(req):
     category = Category.objects.all()
     recent = Post.objects.order_by("created_date")[:5]
     user = req.user
     userNm = ""
+
     if user.is_authenticated():
         userNm = user.username
 
