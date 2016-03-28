@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from post.forms import PostForm, SignInForm
 from post.models import Post, Category, Tag
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+import os, uuid, json
 
 
 def index(req):
@@ -38,6 +40,24 @@ def post(req):
 
     return render(req, 'write.html', {'form': form})
 
+@csrf_exempt
+@login_required(login_url='/signIn/')
+def imgUpload(req):
+    if req.method == "POST":
+        img_path = handle_uploaded_file(req.META["HTTP_FILE_NAME"], req.body)
+        resp_data = "&bNewLine=true&sFileName=" + req.META["HTTP_FILE_NAME"] + "&sFileURL="+img_path
+        return HttpResponse(resp_data)
+
+def handle_uploaded_file(filename, file):
+    img_dir = "media/"
+    ext = os.path.splitext(filename)[1]
+    file_name = str(uuid.uuid4())
+    img_path = img_dir + file_name + ext
+
+    with open(img_path, 'wb+') as outfile:
+        outfile.write(file)
+
+    return img_path
 
 def signIn(req):
     if req.method == 'POST':

@@ -5,3 +5,4 @@ blog/manage.py
 migrations
 *.pyc
 .idea
+media
