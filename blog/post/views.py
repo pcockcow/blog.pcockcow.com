@@ -45,7 +45,7 @@ def post(req):
 def imgUpload(req):
     if req.method == "POST":
         img_path = handle_uploaded_file(req.META["HTTP_FILE_NAME"], req.body)
-        resp_data = "&bNewLine=true&sFileName=" + req.META["HTTP_FILE_NAME"] + "&sFileURL="+img_path
+        resp_data = "&bNewLine=true&sFileName=" + req.META["HTTP_FILE_NAME"] + "&sFileURL=http://"+req.META['HTTP_HOST']+"/"+img_path
         return HttpResponse(resp_data)
 
 def handle_uploaded_file(filename, file):
