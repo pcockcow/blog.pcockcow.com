@@ -1,3 +1,6 @@
-{% load staticfiles %}
-<link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}"/>
-<script type="text/javascript" src="{% static "js/smartEditor/js/HuskyEZCreator.js" %}"></script>
+<div class="header">
+    <h1><a href="/">PCOCKCOW.COM</a></h1>
+    {% if username %}
+        <div class="userInfo"> {{username}} | <a href="/logout/">로그아웃 하기</a></div>
+    {% endif %}
+</div>

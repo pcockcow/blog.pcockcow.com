@@ -3,18 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<title>PCOCKCOW.COM</title>
-	{% include "include/header.html" %}
+	{% include "include/include.html" %}
 </head>
 <body>
 	<div class="wrap">
-	    {% include "include/gnb.html" %}
+	    {% include "include/header.html" %}
 		<div class="container">
-            {% include "include/lnb.html" %}
             <div class="cont">
-                {% block content %}{% endblock %}
-                {% include "include/footer.html" %}
+                {% block content %}
+				{% endblock %}
+
+				{% include "include/lnb.html" %}
 			</div>
 		</div>
+		{% include "include/footer.html" %}
 	</div>
 </body>
 </html>

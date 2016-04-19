@@ -6,26 +6,39 @@ ul,li,ol{list-style:none;}
 a{text-decoration:none;}
 h1{font-size:24px;font-weight:bold;color:#333;}
 
-.wrap{width:100%;height:100%;}
-.header{position:relative;z-index:10;padding:20px 0;width:100%;border-bottom:1px solid #000;background-color:#fff;}
-.header h1{margin-left:30px;}
-.container{position:relative;min-height:100%;margin-top:-59px;padding:0 290px 0 30px;}
-.container .cont{padding-top:80px;}
-.footer{padding:0 60px;margin-top:30px;}
-.footer .cont{padding:10px 0 0 0;border-top:1px solid #ededed;}
-.footer p{margin-top:5px;text-align:center;}
+.clrFix{clear:both;}
+.clrFix:after{content:"";display:block;clear:both;}
 
+
+.wrap{width:100%;height:100%;}
+.header{position:relative;padding:30px 0;width:100%;border-bottom:1px solid #666;background-color:#888;}
+.header h1{margin-left:30px;}
+.header h1 a{color:#fff;font-size:24px;}
 .header .userInfo{position:absolute;top:21px;right:20px;}
 
+.container{position:relative;min-height:100%;width:1024px;margin:-79px auto -38px;}
+.container:after{content:"";display:block;clear:both;}
+.container .cont{padding:100px 10px 70px;}
 
-.lnb{position:absolute;top:0;right:0;padding:0 15px;width:229px;min-height:100%;border-left:1px solid #000;}
-.lnbCont{padding-top:59px;}
-.menuSet{margin-top:30px;}
-.menuSet .tit{margin-bottom:5px;font-size:14px;font-weight:bold;color:#000;}
+.footer{padding:0 60px;background-color:#888;}
+.footer .cont{padding:10px 0;color:#fff;}
+.footer .cont p{text-align:center;color:#fff}
+
+
+.lnb{margin-top:20px;padding:30px 20px 20px;border-top:1px solid #ededed}
+.lnb:after{content:"";display:block;clear:both;}
+.lnb .category{width:50%;float:left;}
+.lnb .recent{width:50%; float:right;}
+.lnb .tag{margin-top:30px;clear:both;}
+
+.menuSet{}
+.menuSet .tit{margin-bottom:10px;font-size:20px;font-weight:bold;color:#000;}
 .menuSet .menu{margin-left:20px;}
-.menuSet .menu li{margin-bottom:3px;}
-.menuSet .tags{padding-left:20px;}
-.menuSet .tags .tag{display:inline-block;padding:0 3px; margin:0 3px 3px 0;border:1px solid #000;border-radius:5px;}
+.menuSet .menu li{margin-bottom:5px;}
+.menuSet .menu li a{font-size:16px;}
+.menuSet .tags{padding-left:20px;min-height:20px;}
+.menuSet .tags .tag{display:inline-block;padding:5px 8px; margin:0 3px 3px 0;border:1px solid #333; border-radius:3px;}
+
 
 .postList{padding:20px;}
 .postList li{padding:30px;margin-bottom:30px;background-color:#fafafa;}
@@ -39,6 +52,7 @@ h1{font-size:24px;font-weight:bold;color:#333;}
 
 .postBody{padding:50px;}
 .postBody, .postBody p, .postBody span{font-size:18px;line-height:23px;}
+.postBody img{max-width:100%;}
 
 .postFooter{padding:20px 50px;}
 .postFooter .profileImg img{width:70px;height:70px;background-color:#fff;border-radius:10px;border:1px solid #aaa;}
