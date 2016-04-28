@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^signIn/', views.signIn),
     url(r'^logout/', views.signOut),
     url(r'^imgUpload/', views.imgUpload),
+    url(r'^category/(?P<categoryName>.*)', views.categoryList),
     url(r'^(?P<post_id>\d+)', views.detail),
     url(r'^$', views.index),
 ]

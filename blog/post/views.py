@@ -13,6 +13,10 @@ def index(req):
     posts = Post.objects.all().order_by("-id")
     return render(req, 'index.html', { "posts": posts })
 
+def categoryList(req, categoryName):
+    print (categoryName)
+    posts = Post.objects.filter(category = categoryName).order_by("-id")
+    return render(req, 'index.html', { "posts": posts })
 
 def detail(req, post_id):
     post = Post.objects.get(pk=post_id)
